@@ -1,5 +1,5 @@
 # source: http://localhost:3000/api/graphql
-# timestamp: Thu Apr 04 2019 14:57:09 GMT+0200 (Central European Summer Time)
+# timestamp: Thu Apr 18 2019 11:48:30 GMT+0200 (Central European Summer Time)
 
 """
 Application model
@@ -90,7 +90,9 @@ type Collective implements CollectiveInterface {
   hostFeePercent: Int
   currency: String
   image: String
+  imageUrl(height: Int, format: ImageFormat): String
   backgroundImage: String
+  backgroundImageUrl(height: Int, format: ImageFormat): String
   settings: JSON
 
   """
@@ -299,7 +301,9 @@ interface CollectiveInterface {
   hostFeePercent: Int
   currency: String
   image: String
+  imageUrl(height: Int, format: ImageFormat): String
   backgroundImage: String
+  backgroundImageUrl(height: Int, format: ImageFormat): String
   settings: JSON
   data: JSON
   slug: String
@@ -649,7 +653,9 @@ type Event implements CollectiveInterface {
   hostFeePercent: Int
   currency: String
   image: String
+  imageUrl(height: Int, format: ImageFormat): String
   backgroundImage: String
+  backgroundImageUrl(height: Int, format: ImageFormat): String
   settings: JSON
 
   """
@@ -929,6 +935,14 @@ enum HostCollectiveOrderFieldType {
   Order hosts by updated time.
   """
   updatedAt
+}
+
+enum ImageFormat {
+  txt
+  png
+  jpg
+  gif
+  svg
 }
 
 """
@@ -1571,7 +1585,9 @@ type Organization implements CollectiveInterface {
   hostFeePercent: Int
   currency: String
   image: String
+  imageUrl(height: Int, format: ImageFormat): String
   backgroundImage: String
+  backgroundImageUrl(height: Int, format: ImageFormat): String
   settings: JSON
 
   """
@@ -2363,7 +2379,9 @@ type User implements CollectiveInterface {
   hostFeePercent: Int
   currency: String
   image: String
+  imageUrl(height: Int, format: ImageFormat): String
   backgroundImage: String
+  backgroundImageUrl(height: Int, format: ImageFormat): String
   settings: JSON
 
   """

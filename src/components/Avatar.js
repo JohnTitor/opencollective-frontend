@@ -30,7 +30,7 @@ StyledAvatar.defaultProps = {
   omitProps: tag.defaultProps.omitProps.concat('backgroundImage'),
 };
 
-const Avatar = ({ src, type = 'USER', radius, name, ...styleProps }) => {
+export const Avatar = ({ src, type = 'USER', radius, name, ...styleProps }) => {
   const style = {};
   // Avoid setting null/undefined background images
   if (src) {
@@ -52,4 +52,6 @@ Avatar.propTypes = {
   type: PropTypes.oneOf(['USER', 'COLLECTIVE', 'ORGANIZATION', 'CHAPTER', 'ANONYMOUS']),
 };
 
-export default withFallbackImage(Avatar);
+export const AvatarWithFallbackImage = withFallbackImage(Avatar);
+
+export default AvatarWithFallbackImage;
