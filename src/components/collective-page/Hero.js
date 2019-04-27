@@ -28,6 +28,7 @@ import Link from '../Link';
 
 import { AllSectionsNames, Dimensions } from './_constants';
 import NavBar from './NavBar';
+import HeroBackgroundMaskSVG from './HeroBackgroundMask.svg';
 
 /** Main component's container. Deals with background and mask. */
 const MainContainer = styled.div`
